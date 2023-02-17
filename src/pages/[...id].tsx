@@ -13,10 +13,11 @@ export default function Link() {
     { id: typeof id === "string" ? id : (id[0] as string) },
     {
       onSuccess: async (data) => {
-        console.log(typeof id === "string" ? id : (id[0] as string));
-        console.log(data);
         if (!data) return;
-        await router.replace(data.url);
+        let url = data.url;
+        if (!url.startsWith("https://") && !url.startsWith("http://"))
+          url = `https://${url}`;
+        await router.replace(url);
       },
     }
   );
