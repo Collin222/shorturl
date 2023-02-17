@@ -12,11 +12,11 @@ export default function Link() {
   const link = api.links.getLink.useQuery(
     { id: typeof id === "string" ? id : (id[0] as string) },
     {
-      onSuccess: (data) => {
+      onSuccess: async (data) => {
         console.log(typeof id === "string" ? id : (id[0] as string));
         console.log(data);
         if (!data) return;
-        router.replace(data.url);
+        await router.replace(data.url);
       },
     }
   );

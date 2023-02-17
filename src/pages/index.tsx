@@ -1,4 +1,4 @@
-import { Link } from "@prisma/client";
+import type { Link } from "@prisma/client";
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import { useState } from "react";
@@ -129,13 +129,19 @@ export default function Home() {
                 <p>
                   <a
                     target="_blank"
+                    rel="noreferrer"
                     className="underline"
                     href={`${env.NEXT_PUBLIC_CLIENT_URL}/${link.id}`}
                   >
                     {env.NEXT_PUBLIC_CLIENT_URL}/{link.id}
                   </a>{" "}
                   <span className="text-gray-300">redirects to </span>
-                  <a target="_blank" className="underline" href={link.url}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline"
+                    href={link.url}
+                  >
                     {link.url}
                   </a>
                 </p>
