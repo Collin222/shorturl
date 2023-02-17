@@ -162,7 +162,7 @@ export default function Home() {
       ) : (
         <div className="flex h-screen items-center justify-center">
           <button
-            className="rounded-md border-2 border-white bg-white px-6 py-4 text-lg font-medium duration-200 hover:bg-transparent"
+            className="rounded-md border-2 border-white bg-white px-6 py-4 text-lg font-medium text-black duration-200 hover:bg-transparent hover:text-white"
             onClick={() => signIn("discord")}
           >
             Login to Start Shortening Links
